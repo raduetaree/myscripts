@@ -1,0 +1,193 @@
+import pytesseract as tess
+from PIL import Image
+from random import randrange
+import random
+tess.pytesseract.tesseract_cmd = r"C:\Users\alexa\AppData\Local\Tesseract-OCR\tesseract.exe"
+import pyautogui
+import time
+import os
+import os.path
+import sys
+from keyboard import press
+import win32gui, win32con
+from win32com.client import Dispatch
+import PIL
+from datetime import datetime
+import glob
+import cv2
+from PIL import Image
+import os, sys
+import cv2
+import numpy as numpy
+import matplotlib.pyplot as plt
+from PIL import Image
+import os, sys
+import cv2
+import numpy as numpy
+import matplotlib.pyplot as plt
+
+# for 3 videos
+import cv2
+
+#Video 1 =========================================================================================================
+def video2image_v1(filename):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+    success,image = vidcap.read()
+    count = 0
+    success = True
+    while success:
+      cv2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file
+      success,image = vidcap.read()
+      print ('Read a new frame (%d): %d' % (count, success))
+      count += 1
+
+
+def getFrame(vidcap, sec, count):
+    vidcap.set(cv2.CAP_PROP_POS_MSEC, sec*1000)
+    hasFrames, image = vidcap.read()
+    if hasFrames:
+        cv2.imwrite("D:/PORN/test/Video 1/"+"image"+str(count)+".jpg", image)
+        print("Image %d.jpg done" % count)
+    return hasFrames
+
+def video2image_v2(filename, capInterval):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+
+    sec = 400
+    frameRate = 500 # if set to 0.5 means it will capture images in each 0.5 secondes
+    count = 1
+    success = getFrame(vidcap, sec, count)
+    while success:
+        count += 1
+        sec += frameRate
+        sec = round(sec, 2)
+        success = getFrame(vidcap, sec, count)
+
+
+def main():
+    filename = r"1.mp4"
+    extractFunc = 2
+
+    if extractFunc == 1:
+        video2image_v1(filename)
+    elif extractFunc == 2:
+        video2image_v2(filename, 0.1)
+
+
+#####################
+#  File entry point
+#####################
+if __name__=='__main__':
+    main()
+
+
+
+
+    #Video 2 =========================================================================================================Video 2
+def video2image_v1(filename):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+    success,image = vidcap.read()
+    count = 0
+    success = True
+    while success:
+      cv2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file
+      success,image = vidcap.read()
+      print ('Read a new frame (%d): %d' % (count, success))
+      count += 1
+
+
+def getFrame(vidcap, sec, count):
+    vidcap.set(cv2.CAP_PROP_POS_MSEC, sec*1000)
+    hasFrames, image = vidcap.read()
+    if hasFrames:
+        cv2.imwrite("D:/PORN/test/Video 2/"+"image"+str(count)+".jpg", image)
+        print("Image %d.jpg done" % count)
+    return hasFrames
+
+def video2image_v2(filename, capInterval):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+
+    sec = 400
+    frameRate = 500 # if set to 0.5 means it will capture images in each 0.5 secondes
+    count = 1
+    success = getFrame(vidcap, sec, count)
+    while success:
+        count += 1
+        sec += frameRate
+        sec = round(sec, 2)
+        success = getFrame(vidcap, sec, count)
+
+
+def main():
+    filename = r"2.mp4"
+    extractFunc = 2
+
+    if extractFunc == 1:
+        video2image_v1(filename)
+    elif extractFunc == 2:
+        video2image_v2(filename, 0.1)
+
+
+#####################
+#  File entry point
+#####################
+if __name__=='__main__':
+    main()
+
+
+    #Video 3 ========================================================================================================= Video 3
+def video2image_v1(filename):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+    success,image = vidcap.read()
+    count = 0
+    success = True
+    while success:
+      cv2.imwrite("frame%d.jpg" % count, image)     # save frame as JPEG file
+      success,image = vidcap.read()
+      print ('Read a new frame (%d): %d' % (count, success))
+      count += 1
+
+
+def getFrame(vidcap, sec, count):
+    vidcap.set(cv2.CAP_PROP_POS_MSEC, sec*1000)
+    hasFrames, image = vidcap.read()
+    if hasFrames:
+        cv2.imwrite("D:/PORN/test/Video 3/"+"image"+str(count)+".jpg", image)
+        print("Image %d.jpg done" % count)
+    return hasFrames
+
+def video2image_v2(filename, capInterval):
+    print(cv2.__version__)
+    vidcap = cv2.VideoCapture(filename)
+
+    sec = 400
+    frameRate = 500 # if set to 0.5 means it will capture images in each 0.5 secondes
+    count = 1
+    success = getFrame(vidcap, sec, count)
+    while success:
+        count += 1
+        sec += frameRate
+        sec = round(sec, 2)
+        success = getFrame(vidcap, sec, count)
+
+
+def main():
+    filename = r"3.mp4"
+    extractFunc = 2
+
+    if extractFunc == 1:
+        video2image_v1(filename)
+    elif extractFunc == 2:
+        video2image_v2(filename, 0.1)
+
+
+#####################
+#  File entry point
+#####################
+if __name__=='__main__':
+    main()
