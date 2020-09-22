@@ -1,0 +1,30 @@
+import pytesseract as tess
+from PIL import Image
+tess.pytesseract.tesseract_cmd = r"C:\Users\alexa\AppData\Local\Tesseract-OCR\tesseract.exe"
+import pyautogui
+import time
+import os
+import sys
+from keyboard import press
+import win32gui, win32con
+from win32com.client import Dispatch
+import PIL
+
+
+mywidth=1920
+myheight=1080
+f = r'D:/PORN/test'
+os.listdir(f)
+
+for file in os.listdir(f):
+    f_img = f+"/"+file
+    img = Image.open(f_img)
+    img=img.resize((mywidth,myheight),PIL.Image.ANTIALIAS)
+    img.save('D:/PORN/test/resize/')
+
+
+
+
+
+time.sleep(5)
+press("backspace")
